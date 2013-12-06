@@ -1,4 +1,4 @@
-# ZendFramework 1.10.0
+# ZendFramework 1
 
 ## What is this?
 
