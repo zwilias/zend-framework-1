@@ -13,31 +13,23 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Loader
- * @subpackage Autoloader
+ * @package    Zend_Ldap
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Interface.php 22914 2010-08-29 00:36:00Z ramon $
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Exception.php 20096 2010-01-06 02:05:09Z bkarwin $
  */
 
 /**
- * Autoloader interface
- *
- * @package    Zend_Loader
- * @subpackage Autoloader
+ * @see Zend_Exception
+ */
+require_once 'Zend/Exception.php';
+
+/**
+ * @category   Zend
+ * @package    Zend_Ldap
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-interface Zend_Loader_Autoloader_Interface
+class Zend_Ldap_Converter_Exception extends Zend_Exception
 {
-    /**
-     * Autoload a class
-     *
-     * @abstract
-     * @param   string $class
-     * @return  mixed
-     *          False [if unable to load $class]
-     *          get_class($class) [if $class is successfully loaded]
-     */
-    public function autoload($class);
 }
