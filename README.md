@@ -13,8 +13,14 @@ Welcome to the Zend Framework 1.11 Release!
 
 RELEASE INFORMATION
 ---------------
-Zend Framework 1.11.13 Release (r25040).
-Released on August 20, 2012.
+Zend Framework 1.11.14 Release (r25048).
+Released on August 27, 2012.
+
+RELEASE NOTES
+-------------
+
+1.11.14 simply fixes a malformed class file in the Zend_Feed component
+as released in 1.11.13.
 
 SECURITY NOTICE FOR 1.11.13
 ---------------------------
