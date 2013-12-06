@@ -17,13 +17,13 @@
  * @subpackage Framework
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: HtaccessFile.php 20969 2010-02-07 18:20:02Z ralph $
+ * @version    $Id: DataDirectory.php 20096 2010-01-06 02:05:09Z bkarwin $
  */
 
 /**
- * @see Zend_Tool_Project_Context_Filesystem_File
+ * @see Zend_Tool_Project_Context_Filesystem_Directory
  */
-require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
+require_once 'Zend/Tool/Project/Context/Filesystem/Directory.php';
 
 /**
  * This class is the front most class for utilizing Zend_Tool_Project
@@ -36,13 +36,13 @@ require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Tool_Project_Context_Zf_HtaccessFile extends Zend_Tool_Project_Context_Filesystem_File
+class Zend_Tool_Project_Context_Zf_DocsDirectory extends Zend_Tool_Project_Context_Filesystem_Directory
 {
 
     /**
      * @var string
      */
-    protected $_filesystemName = '.htaccess';
+    protected $_filesystemName = 'docs';
 
     /**
      * getName()
@@ -51,27 +51,11 @@ class Zend_Tool_Project_Context_Zf_HtaccessFile extends Zend_Tool_Project_Contex
      */
     public function getName()
     {
-        return 'HtaccessFile';
+        return 'DocsDirectory';
     }
-
-    /**
-     * getContents()
-     *
-     * @return string
-     */
-    public function getContents()
-    {
-        $output = <<<EOS
-
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^.*$ - [NC,L]
-RewriteRule ^.*$ index.php [NC,L]
-
-EOS;
-        return $output;
+    
+    public function create(){
+        parent::create();
     }
 
 }
