@@ -13,7 +13,7 @@ Welcome to the Zend Framework 1.10 Release!
 
 RELEASE INFORMATION
 ---------------
-Zend Framework 1.10.1 Release (r21001).
+Zend Framework 1.10.2 Release (r21184).
 Released on <Month> <Day>, <Year>.
 
 NEW FEATURES
