@@ -1,0 +1,25 @@
+{
+    "name": "zwilias/zend-framework-1",
+    "description": "Good old zend-framework one, composer-ready. For those of us stuck with it, but wanting to use composer nevertheless.",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Ilias Van Peer",
+            "email": "ilias@idlemonkeys.net",
+	    "role": "Composer packaging"
+        },
+	{
+	    "name": "Zend Technologies USA, inc.",
+	    "role": "Original publisher"
+	}
+
+    ],
+    "require": {
+	"php": ">=5.0.0"
+    },
+    "autoload": {
+	"psr-0": {
+	    "Zend_": "src/"
+	}
+    }
+}
