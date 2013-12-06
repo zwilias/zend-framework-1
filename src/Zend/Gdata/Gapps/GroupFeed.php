@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Zend Framework
  *
@@ -13,28 +14,40 @@
  * to license@zend.com so we can send you a copy immediately.
  *
  * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
+ * @package    Zend_Gdata
+ * @subpackage Gapps
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Exception.php 22610 2010-07-17 08:49:08Z torio $
+ * @version    $Id:$
  */
 
 /**
- * @see Zend_Application_Exception
+ * @see Zend_Gdata_Feed
  */
-require_once 'Zend/Application/Exception.php';
+require_once 'Zend/Gdata/Feed.php';
 
 /**
- * Exception class for Zend_Application
+ * @see Zend_Gdata_Gapps_GroupEntry
+ */
+require_once 'Zend/Gdata/Gapps/GroupEntry.php';
+
+/**
+ * Data model for a collection of Google Apps group entries, usually
+ * provided by the Google Apps servers.
  *
- * @uses       Zend_Application_Exception
+ * For information on requesting this feed from a server, see the Google
+ * Apps service class, Zend_Gdata_Gapps.
+ *
  * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
+ * @package    Zend_Gdata
+ * @subpackage Gapps
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Application_Resource_Exception extends Zend_Application_Exception
+class Zend_Gdata_Gapps_GroupFeed extends Zend_Gdata_Feed
 {
+
+    protected $_entryClassName = 'Zend_Gdata_Gapps_GroupEntry';
+    protected $_feedClassName = 'Zend_Gdata_Gapps_GroupFeed';
+
 }
