@@ -16,7 +16,7 @@
  * @package    Zend_Ldap
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Attribute.php 22997 2010-09-22 17:04:28Z sgehrig $
+ * @version    $Id: Attribute.php 22996 2010-09-22 17:01:46Z sgehrig $
  */
 
 /**
@@ -58,13 +58,13 @@ class Zend_Ldap_Attribute
             foreach ($value as $v)
             {
                 $v = self::_valueToLdap($v);
-                if (!is_null($v)) $valArray[] = $v;
+                if ($v !== null) $valArray[] = $v;
             }
         }
-        else if (!is_null($value))
+        else if ($value !== null)
         {
             $value = self::_valueToLdap($value);
-            if (!is_null($value)) $valArray[] = $value;
+            if ($value !== null) $valArray[] = $value;
         }
 
         if ($append === true && isset($data[$attribName]))
@@ -89,7 +89,7 @@ class Zend_Ldap_Attribute
     public static function getAttribute(array $data, $attribName, $index = null)
     {
         $attribName = strtolower($attribName);
-        if (is_null($index)) {
+        if ($index === null) {
             if (!isset($data[$attribName])) return array();
             $retArray = array();
             foreach ($data[$attribName] as $v)
@@ -351,12 +351,12 @@ class Zend_Ldap_Attribute
         {
             foreach ($value as $v) {
                 $v = self::_valueToLdapDateTime($v, $utc);
-                if (!is_null($v)) $convertedValues[] = $v;
+                if ($v !== null) $convertedValues[] = $v;
             }
         }
-        else if (!is_null($value)) {
+        else if ($value !== null) {
             $value = self::_valueToLdapDateTime($value, $utc);
-            if (!is_null($value)) $convertedValues[] = $value;
+            if ($value !== null) $convertedValues[] = $value;
         }
         self::setAttribute($data, $attribName, $convertedValues, $append);
     }

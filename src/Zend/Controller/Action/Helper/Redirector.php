@@ -17,7 +17,7 @@
  * @subpackage Zend_Controller_Action_Helper
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Redirector.php 22959 2010-09-17 21:00:04Z dragonbe $
+ * @version    $Id: Redirector.php 23248 2010-10-26 12:45:52Z matthew $
  */
 
 /**
@@ -215,7 +215,10 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
             $port  = (isset($_SERVER['SERVER_PORT'])?$_SERVER['SERVER_PORT']:80);
             $uri   = $proto . '://' . $host;
             if ((('http' == $proto) && (80 != $port)) || (('https' == $proto) && (443 != $port))) {
-                $uri .= ':' . $port;
+                // do not append if HTTP_HOST already contains port
+                if (strrchr($host, ':') === false) {
+                    $uri .= ':' . $port;
+                }
             }
             $url = $uri . '/' . ltrim($url, '/');
         }

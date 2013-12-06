@@ -17,7 +17,7 @@
  * @subpackage Plugin
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: FirePhp.php 23068 2010-10-10 00:00:43Z cadorn $
+ * @version    $Id: FirePhp.php 23066 2010-10-09 23:29:20Z cadorn $
  */
 
 /** Zend_Controller_Request_Abstract */
